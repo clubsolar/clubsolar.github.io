@@ -1,4 +1,4 @@
-import { enableProdMode } from '@angular/core';
+import { enableProdMode, ɵflushModuleScopingQueueAsMuchAsPossible } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app/app.module';
@@ -8,5 +8,16 @@ if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule)
+const mobile = true;
+
+if (window.innerWidth < 500) {
+  const mobile = true;
+  console.log(mobile);
+}
+else {
+  const mobile = false;
+  console.log(mobile);
+}
+
+platformBrowserDynamic().bootstrapModule(AppModule, {providers: [{provide: mobile, useValue: mobile}]})
   .catch(err => console.error(err));

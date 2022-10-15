@@ -59,6 +59,14 @@
       background-color: #d4d6d5;
     }
 
+    .mobile-nbr {
+      position: absolute;
+      bottom: 5%;
+      left: 25%;
+      -ms-transform: translateY(-5%);
+      transform: translateY(-5%);
+    }
+
   </style>
 
 
@@ -68,9 +76,9 @@
   <div>
 
     <!-- Phone Number -->
-    <div class="number">
-      <input class="btn" type="button" value="989-860-9431" />
-    </div>
+    <!-- <div class="number">
+      <input *ngIf="mobile" class="btn" type="button" value="989-860-9431" />
+    </div> -->
 
     <!-- Logo -->
      <img class="logo" src="assets/cs_grey .png">
@@ -80,6 +88,6 @@
 
   </div>
   
-  <!-- <app-root></app-root> -->
+  <app-root></app-root>
 </body>
 </html>
